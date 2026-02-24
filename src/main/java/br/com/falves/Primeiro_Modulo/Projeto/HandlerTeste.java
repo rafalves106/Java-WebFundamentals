@@ -28,12 +28,12 @@ public class HandlerTeste implements HttpHandler {
             } else if (exchange.getRequestURI().getPath().contains("/api/sistema")) {
                 sb.append("Versão Java: ").append(System.getProperty("java.version")).append(" | ").append("Sistema Operacional: ").append(System.getProperty("os.name"));
             }
-            // Envia Status Code 200 e o tamanho da resposta em bytes
+            // Envia MensagemStatus Code 200 e o tamanho da resposta em bytes
             exchange.sendResponseHeaders(200, sb.toString().getBytes().length);
         } else if (exchange.getRequestMethod().contains("POST")) {
             sb.append("Apenas consultas (GET) são permitidas nesta API.");
 
-            // Envia Status Code 405 e o tamanho da resposta em bytes
+            // Envia MensagemStatus Code 405 e o tamanho da resposta em bytes
             exchange.sendResponseHeaders(405, sb.toString().getBytes().length);
         }
 

@@ -1,0 +1,20 @@
+@host = http://localhost:8080/api
+
+### Teste de GET geral
+GET {{host}}/livros
+
+### Teste de GET específico
+GET {{host}}/livros?id=1
+
+### Teste de GET com erro não encontrado
+GET {{host}}/livros?id=80
+
+### Teste de POST
+POST {{host}}/cadastro
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nome": "Teste inserção",
+  "autor": "Autor teste"
+}

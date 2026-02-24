@@ -1,0 +1,25 @@
+@host = http://localhost:8080/api/unfiltered/
+
+### Teste de GET Específico
+GET {{host}}/estoque?id=1
+
+### Teste de GET geral
+GET {{host}}/estoque
+
+### Teste de POST objeto
+POST {{host}}/cadastro
+Content-Type: application/json
+
+{
+  "id": 4,
+  "preco": 129.99,
+  "titulo": "Moletom Say More",
+  "categoria": "HOODIE",
+  "tamanho": "M"
+}
+
+### Teste de DELETE objeto
+DELETE {{host}}/estoque?id=4
+
+### Teste de GET com falha
+GET {{host}}/estoque?id=a

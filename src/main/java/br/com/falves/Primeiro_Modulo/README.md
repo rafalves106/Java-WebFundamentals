@@ -72,7 +72,7 @@ public class MeuHandler implements HttpHandler {
         // 1. Configurar o Header (UTF-8 garante acentuação correta)
         exchange.getResponseHeaders().set("Content-Type", "text/plain; charset=UTF-8");
 
-        // 2. Enviar Status Code 200 e o tamanho da resposta em bytes
+        // 2. Enviar MensagemStatus Code 200 e o tamanho da resposta em bytes
         exchange.sendResponseHeaders(200, resposta.getBytes().length);
 
         // 3. Escrever o corpo da resposta no Stream

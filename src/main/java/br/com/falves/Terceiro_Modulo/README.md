@@ -24,10 +24,10 @@ public void handle(HttpExchange exchange) throws IOException {
     String metodo = exchange.getRequestMethod(); 
 
     if ("GET".equals(metodo)) {
-        // Lógica para listar dados (Status 200)
+        // Lógica para listar dados (MensagemStatus 200)
         System.out.println("Usuário quer ler dados.");
     } else if ("POST".equals(metodo)) {
-        // Lógica para receber e salvar dados (Status 201)
+        // Lógica para receber e salvar dados (MensagemStatus 201)
         System.out.println("Usuário quer cadastrar algo.");
     } else {
         // Retorna erro se o verbo não for suportado
