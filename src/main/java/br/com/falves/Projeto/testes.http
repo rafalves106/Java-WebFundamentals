@@ -1,0 +1,82 @@
+@host = http://localhost:8080/api/
+
+### Teste de POST correto
+POST {{host}}/transacoes
+Content-Type: application/json
+
+{
+  "id": 1,
+  "descricao": "Teste Adição",
+  "valor": 300.0,
+  "tipo": "RECEITA",
+  "data": "2026-02-29"
+}
+
+### Teste de POST incorreto | OK
+POST {{host}}/transacoes
+Content-Type: application/json
+
+{
+  "id": 3,
+  "descricao": "Teste Adição",
+  "valor": 0.0,
+  "tipo": "TESTE",
+  "data": "2026-03-29"
+}
+
+### Teste de POST campo vazio | OK
+POST {{host}}/transacoes
+Content-Type: application/json
+
+{
+  "id": 3,
+  "descricao": "",
+  "valor": 0.0,
+  "tipo": "RECEITA",
+  "data": "2026-03-29"
+}
+
+### Teste get geral | OK
+GET {{host}}/transacoes
+
+### Teste get ID específico | OK
+GET {{host}}/transacoes?id=1
+
+### Teste get tipo específico | OK
+GET {{host}}/transacoes?filtro=receita
+
+### Teste get filtro inexistente | OK
+GET {{host}}/transacoes?filtro=teste
+
+### Teste get id falso | Deve retornar exception personalizada | OK
+GET {{host}}/transacoes?id=5
+
+### Teste DELETE | OK
+DELETE {{host}}/transacoes?id=1
+
+### Teste DELETE com id inexistente | OK
+DELETE {{host}}/transacoes?id=5
+
+### Teste de POST para edição | OK
+POST {{host}}/transacoes
+Content-Type: application/json
+
+{
+  "id": 1,
+  "descricao": "Teste Adição",
+  "valor": 300.0,
+  "tipo": "RECEITA",
+  "data": "2026-02-29"
+}
+
+### Teste UPDATE | OK
+PUT {{host}}/transacoes?id=1
+Content-Type: application/json
+
+{
+  "id": 2,
+  "descricao": "Teste Edição",
+  "valor": 400.0,
+  "tipo": "DESPESA",
+  "data": "2029-02-29"
+}

@@ -32,7 +32,7 @@ Você vai desenvolver o núcleo de uma aplicação de finanças. O sistema deve 
     - `GET /transacoes`: Retorna todas as transações em JSON.
     - `GET /transacoes?tipo=RECEITA`: Filtra transações pelo tipo via Query Parameter.
     - `POST /transacoes`: Recebe uma transação (simule o recebimento dos dados).
-- **Status Codes:** Use 200 para buscas, 210 para criados, 400 para erros de validação e 404 para não encontrado.
+- **Status Codes:** Use 200 para buscas, 201 para criados, 400 para erros de validação e 404 para não encontrado.
 
 ### 4. Clean Code e Organização
 
